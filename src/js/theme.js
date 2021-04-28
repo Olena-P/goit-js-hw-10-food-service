@@ -17,25 +17,17 @@ function addClassList(e) {
         refs.body.classList.add(Theme.DARK);
         refs.body.classList.remove(Theme.LIGHT);
 
+        localStorage.setItem('theme', Theme.DARK);
     } else {
         refs.body.classList.add(Theme.LIGHT);
         refs.body.classList.remove(Theme.DARK);
+
+        localStorage.removeItem('theme');
+        localStorage.setItem('theme', Theme.LIGHT);
     };
 };
 
 refs.changeTheme.addEventListener('change', addClassList);
-refs.changeTheme.addEventListener('change', clikCheckTheme);
-
-function clikCheckTheme(e) {
-    const checkTheme = refs.changeTheme.checked;
-    if (checkTheme) {
-        localStorage.setItem('theme', Theme.DARK);
-    } else {
-        localStorage.removeItem('theme');
-        localStorage.setItem('theme', Theme.LIGHT);
-    }
-};
-
 
 const themeInLocal = localStorage.getItem('theme');
 
