@@ -22,7 +22,6 @@ function addClassList(e) {
         refs.body.classList.add(Theme.LIGHT);
         refs.body.classList.remove(Theme.DARK);
 
-        localStorage.removeItem('theme');
         localStorage.setItem('theme', Theme.LIGHT);
     };
 };
