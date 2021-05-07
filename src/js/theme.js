@@ -33,4 +33,6 @@ const themeInLocal = localStorage.getItem('theme');
 if (themeInLocal === Theme.DARK) {
     refs.body.classList.add(Theme.DARK);
     refs.changeTheme.checked = true;
+} else {
+    refs.body.classList.add(Theme.LIGHT);
 };
